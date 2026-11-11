@@ -554,7 +554,6 @@ p { margin: 0 0 1em; }
 .check-no {
   font-family: var(--font-display);
   font-size: 15px;
-  color: var(--cleam, var(--orange));
   color: var(--orange);
 }
 
@@ -613,6 +612,9 @@ p { margin: 0 0 1em; }
   line-height: 1.16;
   letter-spacing: -.005em;
   text-wrap: balance;
+  display: flex;
+  align-items: center;
+  min-height: 2.34em;
 }
 
 .quote-hero .hero-quote-en {
@@ -1205,17 +1207,6 @@ p { margin: 0 0 1em; }
 }
 
 .target:active { transform: scale(.86); }
-
-.target.is-hit {
-  animation: pop .26s ease forwards;
-  pointer-events: none;
-}
-
-@keyframes pop {
-  0% { transform: scale(1); }
-  45% { transform: scale(1.35); background: var(--teal); }
-  100% { transform: scale(0); opacity: 0; }
-}
 
 .game-overlay {
   position: absolute;
