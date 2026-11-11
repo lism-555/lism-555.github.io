@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>无用机器 · 多巴胺档案馆</title>
+<meta name="description" content="一台只会把自己关掉的无用机器，外加一个三十秒的多巴胺快抓小游戏。">
+<meta name="theme-color" content="#FF6B2C">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<!-- 字体已本地化在 assets/fonts，断网也能正常显示 -->
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div id="site-nav"></div>
+
+<main>
+
+  <!-- ---------- 无用机器 ---------- -->
+  <section class="section">
+    <div class="section-head" style="max-width:760px;">
+      <p class="eyebrow"><span class="dot" aria-hidden="true"></span>TOY 01 / 极简数字玩具</p>
+      <h2 style="font-size:clamp(32px,5.4vw,62px);">一台只会<br>关掉自己的机器</h2>
+      <p style="margin-top:16px;font-size:17px;">它的全部功能是：等你打开开关，然后伸出一根手指，把开关按回去。没有别的用途，也不打算有。</p>
+    </div>
+
+    <div class="machine-wrap">
+
+      <!-- 机器本体 -->
+      <div class="machine">
+        <div class="machine-top">
+          <span class="machine-label">THE USELESS MACHINE</span>
+          <span class="led" id="led"><i aria-hidden="true"></i><span id="ledText">电源 OFF</span></span>
+        </div>
+
+        <div class="machine-stage">
+          <button class="power-switch" id="powerSwitch" type="button" role="switch" aria-checked="false" aria-label="无用机器的电源开关">
+            <span class="switch-track"><span class="switch-knob" aria-hidden="true"></span></span>
+            <span class="switch-text" id="switchText">OFF</span>
+          </button>
+
+          <div class="finger" id="finger" aria-hidden="true">
+            <div class="finger-tip"></div>
+            <div class="finger-body"></div>
+            <div class="finger-cuff"></div>
+          </div>
+
+          <div class="hole" aria-hidden="true"></div>
+          <span class="machine-serial" aria-hidden="true">PAT. 1971 · 型号 №07</span>
+        </div>
+
+        <p class="machine-status" id="machineStatus" role="status" aria-live="polite">开关是关的。按一下它，看看会发生什么。</p>
+        <p class="machine-count">它已经把自己关掉 <strong id="offCount">0</strong> 次</p>
+      </div>
+
+      <!-- 说明 -->
+      <div class="machine-side">
+        <h3>为什么它值得存在</h3>
+        <p>十九世纪的机械玩具都是这样：费很大力气，只为完成一件毫无意义的小事。按下开关，机器亮灯、思考、伸手指、关掉自己 —— 整套动作精确、虔诚，而且完全无用。</p>
+        <p>无用不是失败。它是把「效率」这块砖挪开之后，露出来的那块空地。</p>
+
+        <ul class="machine-rules">
+          <li>灯亮时它在思考，别急着连按。</li>
+          <li>手指从洞里出来只要一秒，但你多半会看两三遍。</li>
+          <li>关掉次数会记在本机上，刷新也不会丢。</li>
+        </ul>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ---------- 小游戏 ---------- -->
+  <section class="section" id="game">
+    <div class="section-head" style="max-width:760px;">
+      <p class="eyebrow"><span class="dot" aria-hidden="true"></span>TOY 02 / 三十秒</p>
+      <h2 style="font-size:clamp(30px,4.8vw,54px);">多巴胺快抓</h2>
+      <p style="margin-top:14px;font-size:17px;">形状会随机出现在场地里，点中它就得一分，然后它立刻换个地方。每过一秒多，它还会自己跑掉。三十秒，看看你能抓多少个。</p>
+    </div>
+
+    <div class="game">
+      <div class="game-hud">
+        <div class="hud-box hud-box--score"><span>SCORE 得分</span><strong id="score">0</strong></div>
+        <div class="hud-box hud-box--time"><span>TIME 剩余</span><strong id="time">30s</strong></div>
+        <div class="hud-box hud-box--best"><span>BEST 最高分</span><strong id="best">0</strong></div>
+      </div>
+
+      <div class="game-field" id="gameField">
+        <button class="target" id="target" type="button" aria-label="点我得分" hidden>★</button>
+
+        <div class="game-overlay" id="gameOverlay">
+          <h4 id="overlayTitle">准备好了吗</h4>
+          <p id="overlayText">三十秒，点中出现的形状得分。别守着一个角落等它回来。</p>
+          <button class="btn btn--big btn--primary" id="startGame" type="button">开始（或按空格）</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<div id="site-footer"></div>
+
+<script src="nav.js"></script>
+<script src="machine.js"></script>
+</body>
+</html>

@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>名言墙 · 多巴胺档案馆</title>
+<meta name="description" content="十八条关于设计、代码与玩心的句子。页面顶部的名言每次刷新都不一样。">
+<meta name="theme-color" content="#6B3BF5">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<!-- 字体已本地化在 assets/fonts，断网也能正常显示 -->
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div id="site-nav"></div>
+
+<main>
+
+  <!-- ---------- 随机名言 hero ---------- -->
+  <section class="quote-hero">
+    <div class="quote-hero-inner">
+      <p class="eyebrow"><span class="dot" aria-hidden="true"></span>RANDOM QUOTE / 每次刷新都不一样</p>
+
+      <blockquote id="heroQuote">好设计是尽可能少的设计。</blockquote>
+      <p class="hero-quote-en" id="heroQuoteEn">Good design is as little design as possible.</p>
+      <cite id="heroAuthor">迪特·拉姆斯 · Dieter Rams</cite>
+
+      <div class="quote-hero-actions">
+        <button class="btn btn--big" id="shuffleBtn" type="button">换一条 ↻</button>
+        <span class="counter" id="heroCounter">第 01 / 18 条</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ---------- 全部名言 ---------- -->
+  <section class="section">
+    <div class="section-head">
+      <h2>十八条，够撑一阵子</h2>
+      <p>不分先后。上面那条是随机的，下面这十八条全在这儿，想慢慢读就从第一张开始。</p>
+    </div>
+
+    <div class="quote-list">
+
+      <article class="quote-card"
+        data-zh="好设计是尽可能少的设计。"
+        data-en="Good design is as little design as possible."
+        data-author="迪特·拉姆斯 · Dieter Rams">
+        <blockquote>好设计是尽可能少的设计。</blockquote>
+        <span class="en">Good design is as little design as possible.</span>
+        <span class="author">迪特·拉姆斯 · Dieter Rams</span>
+      </article>
+
+      <article class="quote-card"
+        data-zh="少即是多。"
+        data-en="Less is more."
+        data-author="密斯·凡·德·罗 · Mies van der Rohe">
+        <blockquote>少即是多。</blockquote>
+        <span class="en">Less is more.</span>
+        <span class="author">密斯·凡·德·罗 · Mies van der Rohe</span>
+      </article>
+
+      <article class="quote-card"
+        data-zh="形式永远追随功能。"
+        data-en="Form ever follows function."
+        data-author="路易斯·沙利文 · Louis Sullivan">
+        <blockquote>形式永远追随功能。</blockquote>
+        <span class="en">Form ever follows function.</span>
+        <span class="author">路易斯·沙利文 · Louis Sullivan</span>
+      </article>
+
+      <article class="quote-card"
+        data-zh="完美不是无可增加，而是无可删减。"
+        data-en="Perfection is achieved, not when there is nothing more to add, but when there is nothing left to take away."
+        data-author="圣埃克苏佩里 · Antoine de Saint-Exupéry">
+        <blockquote>完美不是无可增加，而是无可删减。</blockquote>
+        <span class="en">Perfection is achieved, not when there is nothing more to add, but when there is nothing left to take away.</span>
+        <span class="author">圣埃克苏佩里 · Antoine de Saint-Exupéry</span>
+      </article>
+
+      <article class="quote-card"
+        data-zh="任何足够先进的技术，都与魔法无异。"
+        data-en="Any sufficiently advanced technology is indistinguishable from magic."
+        data-author="阿瑟·克拉克 · Arthur C. Clarke">
+        <blockquote>任何足够先进的技术，都与魔法无异。</blockquote>
+        <span class="en">Any sufficiently advanced technology is indistinguishable from magic.</span>
+        <span class="author">阿瑟·克拉克 · Arthur C. Clarke</span>
+      </article>
+
+      <article class="quote-card"
+        data-zh="先让它跑起来，再让它跑对，最后让它跑快。"
+        data-en="Make it work, make it right, make it fast."
+        data-author="肯特·贝克 · Kent Beck">
+        <blockquote>先让它跑起来，再让它跑对，最后让它跑快。</blockquote>
+        <span class="en">Make it work, make it right, make it fast.</span>
+        <span class="author">肯特·贝克 · Kent Beck</span>
+      </article>
+
+      <article class="quote-card"
+        data-zh="过早的优化是万恶之源。"
+        data-en="Premature optimization is the root of all evil."
+        data-author="唐纳德·克努特 · Donald Knuth">
+        <blockquote>过早的优化是万恶之源。</blockquote>
+        <span class="en">Premature optimization is the root of all evil.</span>
+        <span class="author">唐纳德·克努特 · Donald Knuth</span>
+      </article>
+
+      <article class="quote-card"
+        data-zh="完美是好的敌人。"
+        data-en="The best is the enemy of the good."
+        data-author="伏尔泰 · Voltaire">
+        <blockquote>完美是好的敌人。</blockquote>
+        <span class="en">The best is the enemy of the good.</span>
+        <span class="author">伏尔泰 · Voltaire</span>
+      </article>
+
+      <article class="quote-card"
+        data-zh="艺术是洗去灵魂上日常灰尘的水。"
+        data-en="Art washes away from the soul the dust of everyday life."
+        data-author="毕加索 · Pablo Picasso">
+        <blockquote>艺术是洗去灵魂上日常灰尘的水。</blockquote>
+        <span class="en">Art washes away from the soul the dust of everyday life.</span>
+        <span class="author">毕加索 · Pablo Picasso</span>
+      </article>
+
+      <article class="quote-card"
+        data-zh="色彩是琴键，眼睛是琴槌，灵魂是绷满琴弦的钢琴。"
+        data-en="Color is the keyboard, the eyes are the hammers, the soul is the piano with many strings."
+        data-author="康定斯基 · Wassily Kandinsky">
+        <blockquote>色彩是琴键，眼睛是琴槌，灵魂是绷满琴弦的钢琴。</blockquote>
+        <span class="en">Color is the keyboard, the eyes are the hammers, the soul is the piano with many strings.</span>
+        <span class="author">康定斯基 · Wassily Kandinsky</span>
+      </article>
+
+      <article class="quote-card"
+        data-zh="设计不只是外观和感觉，设计是它如何运作。"
+        data-en="Design is not just what it looks like and feels like. Design is how it works."
+        data-author="史蒂夫·乔布斯 · Steve Jobs">
+        <blockquote>设计不只是外观和感觉，设计是它如何运作。</blockquote>
+        <span class="en">Design is not just what it looks like and feels like. Design is how it works.</span>
+        <span class="author">史蒂夫·乔布斯 · Steve Jobs</span>
+      </article>
+
+      <article class="quote-card"
+        data-zh="玩耍常被当成严肃学习之间的休息，但对孩子来说，玩耍就是严肃的学习。"
+        data-en="Play is often talked about as if it were a relief from serious learning. But for children play is serious learning."
+        data-author="弗雷德·罗杰斯 · Fred Rogers">
+        <blockquote>玩耍常被当成严肃学习之间的休息，但对孩子来说，玩耍就是严肃的学习。</blockquote>
+        <span class="en">Play is often talked about as if it were a relief from serious learning. But for children play is serious learning.</span>
+        <span class="author">弗雷德·罗杰斯 · Fred Rogers</span>
+      </article>
+
+      <article class="quote-card"
+        data-zh="保持饥饿，保持愚蠢。"
+        data-en="Stay hungry. Stay foolish."
+        data-author="斯图尔特·布兰德 · 《全球概览》停刊号">
+        <blockquote>保持饥饿，保持愚蠢。</blockquote>
+        <span class="en">Stay hungry. Stay foolish.</span>
+        <span class="author">斯图尔特·布兰德 · 《全球概览》停刊号</span>
+      </article>
+
+      <article class="quote-card"
+        data-zh="未来早已到来，只是尚未均匀分布。"
+        data-en="The future is already here — it's just not evenly distributed."
+        data-author="威廉·吉布森 · William Gibson">
+        <blockquote>未来早已到来，只是尚未均匀分布。</blockquote>
+        <span class="en">The future is already here — it's just not evenly distributed.</span>
+        <span class="author">威廉·吉布森 · William Gibson</span>
+      </article>
+
+      <article class="quote-card"
+        data-zh="认真对待你的快乐。"
+        data-en="Take your pleasure seriously."
+        data-author="查尔斯·伊姆斯 · Charles Eames">
+        <blockquote>认真对待你的快乐。</blockquote>
+        <span class="en">Take your pleasure seriously.</span>
+        <span class="author">查尔斯·伊姆斯 · Charles Eames</span>
+      </article>
+
+      <article class="quote-card"
+        data-zh="设计是把形式与内容放在一起的方法。"
+        data-en="Design is the method of putting form and content together."
+        data-author="保罗·兰德 · Paul Rand">
+        <blockquote>设计是把形式与内容放在一起的方法。</blockquote>
+        <span class="en">Design is the method of putting form and content together.</span>
+        <span class="author">保罗·兰德 · Paul Rand</span>
+      </article>
+
+      <article class="quote-card"
+        data-zh="工欲善其事，必先利其器。"
+        data-en="The mechanic who wishes to do his work well must first sharpen his tools."
+        data-author="《论语·卫灵公》">
+        <blockquote>工欲善其事，必先利其器。</blockquote>
+        <span class="en">The mechanic who wishes to do his work well must first sharpen his tools.</span>
+        <span class="author">《论语·卫灵公》</span>
+      </article>
+
+      <article class="quote-card"
+        data-zh="大巧若拙。"
+        data-en="Great skill appears clumsy."
+        data-author="老子 · 《道德经》">
+        <blockquote>大巧若拙。</blockquote>
+        <span class="en">Great skill appears clumsy.</span>
+        <span class="author">老子 · 《道德经》</span>
+      </article>
+
+    </div>
+  </section>
+
+  <section class="section section--tight">
+    <div class="card card--pink" style="text-align:center;">
+      <span class="card-index">读完了</span>
+      <h3>一句话不解决问题，但能让你打开编辑器</h3>
+      <p style="max-width:52ch;margin-inline:auto;">下一站是七个今晚就能开工的小项目 —— 每个都不需要新工具，只要一个浏览器。</p>
+      <a class="btn btn--primary" href="project.html">去看七个点子 →</a>
+    </div>
+  </section>
+
+</main>
+
+<div id="site-footer"></div>
+
+<script src="nav.js"></script>
+<script>
+/* 顶部随机名言：直接读页面上的卡片，保证只有一份数据源。
+   没有 JS 时，hero 会保留 HTML 里写好的第一条，页面依然完整。 */
+(function () {
+  'use strict';
+
+  var cards = Array.prototype.slice.call(document.querySelectorAll('.quote-card'));
+  var heroQuote = document.getElementById('heroQuote');
+  var heroEn = document.getElementById('heroQuoteEn');
+  var heroAuthor = document.getElementById('heroAuthor');
+  var counter = document.getElementById('heroCounter');
+  var button = document.getElementById('shuffleBtn');
+
+  if (!cards.length || !heroQuote || !button) return;
+
+  var current = -1;
+
+  function pad(n) { return n < 10 ? '0' + n : String(n); }
+
+  function render(index) {
+    var card = cards[index];
+    heroQuote.textContent = card.dataset.zh;
+    heroEn.textContent = card.dataset.en;
+    heroAuthor.textContent = card.dataset.author;
+    counter.textContent = '第 ' + pad(index + 1) + ' / ' + cards.length + ' 条';
+
+    heroQuote.style.opacity = '0';
+    heroQuote.style.transform = 'translateY(10px)';
+    window.requestAnimationFrame(function () {
+      heroQuote.style.transition = 'opacity .32s ease, transform .32s ease';
+      heroQuote.style.opacity = '1';
+      heroQuote.style.transform = 'translateY(0)';
+    });
+  }
+
+  function shuffle() {
+    var next = current;
+    while (cards.length > 1 && next === current) {
+      next = Math.floor(Math.random() * cards.length);
+    }
+    if (cards.length === 1) next = 0;
+    current = next;
+    render(current);
+  }
+
+  button.addEventListener('click', shuffle);
+  shuffle();
+})();
+</script>
+</body>
+</html>

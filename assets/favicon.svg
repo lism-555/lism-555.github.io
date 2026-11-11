@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64" role="img" aria-label="一朵粉色小花">
+  <rect width="64" height="64" rx="14" fill="#FFD23F"/>
+  <g transform="translate(32,32)">
+    <g fill="#FF3D7F" stroke="#1B0F2B" stroke-width="3">
+      <ellipse cx="0" cy="-15" rx="8" ry="15"/>
+      <ellipse cx="0" cy="-15" rx="8" ry="15" transform="rotate(72)"/>
+      <ellipse cx="0" cy="-15" rx="8" ry="15" transform="rotate(144)"/>
+      <ellipse cx="0" cy="-15" rx="8" ry="15" transform="rotate(216)"/>
+      <ellipse cx="0" cy="-15" rx="8" ry="15" transform="rotate(288)"/>
+    </g>
+    <circle r="8" fill="#FFD23F" stroke="#1B0F2B" stroke-width="3"/>
+  </g>
+</svg>

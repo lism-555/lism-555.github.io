@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>七个点子 · 多巴胺档案馆</title>
+<meta name="description" content="七个今晚就能开工的小项目：情绪色卡、无用按钮博物馆、单频道收音机、迪斯科番茄钟、一句话天气、打字机诗和胶带留言墙。">
+<meta name="theme-color" content="#0FC2A5">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<!-- 字体已本地化在 assets/fonts，断网也能正常显示 -->
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div id="site-nav"></div>
+
+<main>
+
+  <section class="section">
+    <div class="section-head" style="max-width:820px;">
+      <p class="eyebrow"><span class="dot" aria-hidden="true"></span>PROJECT MENU / 七道小菜</p>
+      <h2 style="font-size:clamp(34px,5.6vw,66px);">七个今晚<br>就能开工的点子</h2>
+      <p style="margin-top:16px;font-size:17.5px;">挑选标准只有两条：一个晚上做得完；做完了忍不住想给朋友看。都不需要新工具，一个浏览器加一个编辑器就够。</p>
+    </div>
+
+    <div class="project-grid">
+
+      <article class="project-card">
+        <div class="project-top">
+          <span class="project-num">01</span>
+          <span class="diff" data-level="易">易</span>
+        </div>
+        <h3>今日情绪色卡</h3>
+        <p>每天给你一个颜色，配一句话。你写一句当天的心情，存进 localStorage，一年下来就是一条彩色的时间线。</p>
+        <p class="project-why"><strong>为什么好玩：</strong>颜色是随机的，但你写下的字不是。半年后回看，会发现自己的情绪其实有季节。</p>
+        <ul class="tags">
+          <li>localStorage</li>
+          <li>1 个晚上</li>
+          <li>颜色</li>
+        </ul>
+      </article>
+
+      <article class="project-card">
+        <div class="project-top">
+          <span class="project-num">02</span>
+          <span class="diff" data-level="易">易</span>
+        </div>
+        <h3>无用按钮博物馆</h3>
+        <p>二十个毫无功能的按钮：会下沉的、按下去叹气的、按三次才响的、按了之后跑到别处的。每个都配一段正经的展品说明。</p>
+        <p class="project-why"><strong>为什么好玩：</strong>这是练习 CSS 动画最快乐的方式 —— 不用考虑有没有用，只要手感好。</p>
+        <ul class="tags">
+          <li>CSS 动画</li>
+          <li>1–2 个晚上</li>
+          <li>手感</li>
+        </ul>
+      </article>
+
+      <article class="project-card">
+        <div class="project-top">
+          <span class="project-num">03</span>
+          <span class="diff" data-level="中">中</span>
+        </div>
+        <h3>只有一个频道的老收音机</h3>
+        <p>一台木纹外壳的假收音机，旋钮能转，频率永远停在同一个台。打开就播白噪音，底下一行字缓慢滚动一条随机名言。</p>
+        <p class="project-why"><strong>为什么好玩：</strong>它同时练到音频、旋钮拖拽和定时器 —— 而且真的能让人安静下来。</p>
+        <ul class="tags">
+          <li>Web Audio</li>
+          <li>2 个晚上</li>
+          <li>声音</li>
+        </ul>
+      </article>
+
+      <article class="project-card">
+        <div class="project-top">
+          <span class="project-num">04</span>
+          <span class="diff" data-level="中">中</span>
+        </div>
+        <h3>番茄钟迪斯科</h3>
+        <p>二十五分钟专注，背景的灯球缓缓旋转，颜色随剩余时间从紫走到橙。休息五分钟时，屏幕开始放彩带。</p>
+        <p class="project-why"><strong>为什么好玩：</strong>计时器本身很无聊，但没人会拒绝一个会在整点给你放彩带的计时器。</p>
+        <ul class="tags">
+          <li>setInterval</li>
+          <li>1 个晚上</li>
+          <li>渐变</li>
+        </ul>
+      </article>
+
+      <article class="project-card">
+        <div class="project-top">
+          <span class="project-num">05</span>
+          <span class="diff" data-level="易">易</span>
+        </div>
+        <h3>一句话天气</h3>
+        <p>把气温翻译成心情：「十七度，适合把外套敞开走一段路。」「三十四度，请把自己放进冰箱。」一行字代替所有图标。</p>
+        <p class="project-why"><strong>为什么好玩：</strong>写字比画图标难，也比画图标有意思。你会发现自己对天气有很多话想说。</p>
+        <ul class="tags">
+          <li>文案</li>
+          <li>1 个下午</li>
+          <li>单一职责</li>
+        </ul>
+      </article>
+
+      <article class="project-card">
+        <div class="project-top">
+          <span class="project-num">06</span>
+          <span class="diff" data-level="中">中</span>
+        </div>
+        <h3>打字机诗</h3>
+        <p>你输入一段话，它一个字一个字敲出来，伴随着真实的打字机咔嗒声。敲完之后，纸从页面底下缓缓被推上来。</p>
+        <p class="project-why"><strong>为什么好玩：</strong>同样是显示文字，加了速度的差别，就有了呼吸。做一次你就懂缓动曲线了。</p>
+        <ul class="tags">
+          <li>异步</li>
+          <li>2 个晚上</li>
+          <li>节奏</li>
+        </ul>
+      </article>
+
+      <article class="project-card">
+        <div class="project-top">
+          <span class="project-num">07</span>
+          <span class="diff" data-level="难">难</span>
+        </div>
+        <h3>胶带留言墙</h3>
+        <p>一张软木板，便签可以用胶带贴在任意位置，能拖动、能旋转、能撕下来重贴。所有位置存起来，下次打开还在原处。</p>
+        <p class="project-why"><strong>为什么好玩：</strong>拖拽是前端最像「魔法」的一课：光标一动，物件就跟着走，你会有种在搬家具的错觉。</p>
+        <ul class="tags">
+          <li>指针事件</li>
+          <li>一整个周末</li>
+          <li>坐标</li>
+        </ul>
+      </article>
+
+      <article class="project-card project-card--cta" style="background:var(--yellow);justify-content:center;">
+        <div class="project-top">
+          <span class="project-num" style="color:var(--ink);text-shadow:2.5px 2.5px 0 var(--paper);">★</span>
+        </div>
+        <h3>先挑一个，别挑第三个晚上</h3>
+        <p>选那个让你「啊这个我也想过」的。那种反应通常意味着你已经知道怎么做了 —— 你只是一直没动手。</p>
+        <p class="project-why" style="background:var(--paper);"><strong>最小的一步：</strong>新建一个文件夹，里面放一个 index.html。就这一步，今晚就算开工了。</p>
+        <a class="btn btn--primary" href="machine.html">先去玩三分钟 →</a>
+      </article>
+
+    </div>
+  </section>
+
+</main>
+
+<div id="site-footer"></div>
+
+<script src="nav.js"></script>
+</body>
+</html>
