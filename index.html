@@ -3,11 +3,10 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>多巴胺档案馆 · 复古网页俱乐部</title>
-<meta name="description" content="一个复古多巴胺风格的小站：十八条关于创造与设计的名言、七个今晚就能开工的项目，还有一台只会把自己关掉的无用机器。">
-<meta name="theme-color" content="#FFD23F">
+<title>The Slow Press · 慢印</title>
+<meta name="description" content="一份关于网页、纸张与手上功夫的小刊物：十八句引语、七件今晚就能动手的小事，和一台只会把自己关掉的机器。">
+<meta name="theme-color" content="#F5F0E6">
 <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
-<!-- 字体已本地化在 assets/fonts，断网也能正常显示 -->
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -16,143 +15,102 @@
 
 <main>
 
-  <!-- ---------- Hero ---------- -->
-  <section class="hero">
+  <!-- ---------- 开篇 ---------- -->
+  <section class="shell hero">
     <div class="hero-copy">
-      <p class="eyebrow"><span class="dot" aria-hidden="true"></span>PROJECT 01 / 站内漫游</p>
-      <h1>把网页做成<span class="hl">一颗会发光的糖</span></h1>
-      <p class="lede">这里没有灰白极简。只有 1970 年代的橙、粉、紫，粗黑描边，一张贴在角落的笑脸，还有一台专门把自己关掉的机器。四个页面，全部手写，双击就能打开。</p>
+      <p class="label rise">Issue 01 — Winter</p>
 
-      <div class="hero-actions">
-        <a class="btn btn--primary" href="quotes.html">读 18 条名言 →</a>
-        <a class="btn" href="machine.html">按下那个开关</a>
+      <h1 class="rise rise-2">把网页当成<br>一张可以反复印的纸。</h1>
+
+      <p class="hero-en rise rise-3" style="font-family:var(--display);font-style:italic;font-size:clamp(20px,2.3vw,29px);color:var(--terracotta);margin:-6px 0 22px;letter-spacing:.01em;">Printed slowly, on purpose.</p>
+
+      <p class="lede rise rise-3">这一期收了十八句关于手艺的话、七件今晚就能动手的小事，还有一台只会把自己关掉的机器。没有算法，没有订阅窗，翻页靠自己点。</p>
+
+      <div class="hero-bottom rise rise-4">
+        <a class="textlink" href="quotes.html">开始翻阅 <span class="arrow" aria-hidden="true">→</span></a>
+        <a class="textlink" href="project.html" style="color:var(--muted)">跳过序言，直接看提案</a>
       </div>
+    </div>
 
-      <ul class="hero-facts">
-        <li><strong>4</strong><span>个页面</span></li>
-        <li><strong>18</strong><span>条名言</span></li>
-        <li><strong>7</strong><span>个项目点子</span></li>
-        <li><strong>1</strong><span>台无用机器</span></li>
+    <figure class="hero-fig rise rise-3">
+      <img src="assets/print-01.svg" width="800" height="1000"
+           alt="米色纸面上，一方赤陶色块与一方橄榄色块错位交叠，右下压着半调网点，右上有一圈细线，底部排着四格印刷色标。">
+      <figcaption class="figcap">Fig. 01 — 三色套印，赤陶与橄榄错位 2 毫米</figcaption>
+    </figure>
+  </section>
+
+  <!-- ---------- 目录 ---------- -->
+  <section class="shell contents" id="contents">
+    <div class="contents-head">
+      <h2>目录</h2>
+      <p class="label">Contents</p>
+    </div>
+
+    <div class="toc">
+      <a class="toc-row" href="quotes.html">
+        <span class="toc-num">01</span>
+        <span class="toc-title">引语：十八句，够撑一阵子</span>
+        <span class="toc-desc">从迪特·拉姆斯到《道德经》。每次刷新，页首那句都不一样。</span>
+        <span class="toc-go">Read →</span>
+      </a>
+
+      <a class="toc-row" href="project.html">
+        <span class="toc-num">02</span>
+        <span class="toc-title">提案：七件今晚就能动手的小事</span>
+        <span class="toc-desc">每件一个晚上做得完，做完了会想拿给朋友看。</span>
+        <span class="toc-go">Read →</span>
+      </a>
+
+      <a class="toc-row" href="machine.html">
+        <span class="toc-num">03</span>
+        <span class="toc-title">装置：一台只会关掉自己的机器</span>
+        <span class="toc-desc">按开它，它伸出一根手指，把开关按回去。附一台三十秒的计时器。</span>
+        <span class="toc-go">Enter →</span>
+      </a>
+    </div>
+  </section>
+
+  <!-- ---------- 编者按 ---------- -->
+  <section class="shell editorial" id="editorial">
+    <div>
+      <p class="label">Editorial</p>
+      <h2 style="font-size:clamp(24px,2.6vw,32px);margin-top:16px;">为什么慢</h2>
+    </div>
+
+    <div class="editorial-body">
+      <p class="drop">这套页面是在一个下午里排完的。没有设计系统，没有组件库，只有一套字号、一条一像素的线和两种印色。想做的东西太多时，先把它们减到四页，剩下的自然就清楚了。</p>
+
+      <p>印刷厂有条老规矩：先用最少的颜色把话说清楚，再考虑加色。网页也一样 —— 先把标题、正文、留白排好，动效、插画、花边都是可选项，不是必需品。</p>
+
+      <blockquote class="pull">限制不是敌人。限制是尺子。</blockquote>
+
+      <p>所以这里没有轮播、没有弹窗、没有「猜你喜欢」。每页只做一件事：让你读一句话，挑一个点子，或者按一下开关。页面底下的那行小字也不是装饰，它写着这一期用了什么字体、什么纸色、什么线宽。</p>
+    </div>
+  </section>
+
+  <!-- ---------- 版权页 ---------- -->
+  <section class="shell afterword" id="colophon">
+    <div>
+      <p class="label">Colophon</p>
+      <h2 style="font-size:clamp(22px,2.4vw,28px);margin:16px 0 18px;">这一期是怎么做出来的</h2>
+      <p style="font-size:15px;line-height:1.95;color:var(--muted);max-width:44ch;">四页共用一套样式表、一份导航源文件。所有图都是手写的 SVG，没有一张照片、没有一个占位块。</p>
+    </div>
+
+    <div>
+      <ul class="device-specs" style="margin-top:0;">
+        <li><b>Display</b><span>Instrument Serif（正文标题的英文部分）</span></li>
+        <li><b>Text</b><span>Noto Serif CJK / 宋体，正文用思源黑体</span></li>
+        <li><b>Paper</b><span>#F5F0E6，纸纹用一层极淡的噪点</span></li>
+        <li><b>Ink</b><span>赤陶 #A9462C、橄榄 #4F5741，仅此二色</span></li>
+        <li><b>Rule</b><span>1 像素，透明度 16%，不用投影和圆角</span></li>
+        <li><b>Build</b><span>无。打开 index.html 就是成品</span></li>
       </ul>
-    </div>
-
-    <div class="hero-art">
-      <img src="assets/hero.svg" width="1200" height="900"
-           alt="复古插画：一轮带笑脸的黄色太阳在橙粉紫渐变天空里放射光芒，下方是青绿与紫色的波浪，底部铺着黑黄棋盘，点缀粉色花朵和黄色星星。">
-      <span class="hero-badge" aria-hidden="true">★</span>
-      <span class="hero-note" aria-hidden="true">stay loud!</span>
-    </div>
-  </section>
-
-  <!-- ---------- 站点概览 ---------- -->
-  <section class="section" id="overview">
-    <div class="section-head">
-      <h2>三条路，随便挑一条</h2>
-      <p>这是个四页的小站：一页读句子，一页攒点子，一页浪费三分钟，剩下的就是你现在站的地方。</p>
-    </div>
-
-    <div class="grid grid--3">
-      <a class="card card--link card--pink" href="quotes.html">
-        <span class="card-index">01 / 名言墙</span>
-        <h3>十八句话<br>关于手艺和玩心</h3>
-        <p>从迪特·拉姆斯到《道德经》。页面顶部那条每次刷新都不一样，看看你能撞见哪一句。</p>
-        <span class="card-go">quotes.html →</span>
-      </a>
-
-      <a class="card card--link card--teal" href="project.html">
-        <span class="card-index">02 / 项目</span>
-        <h3>七个今晚<br>就能开工的点子</h3>
-        <p>每个都足够小，小到一个晚上能做完；又足够怪，怪到你想立刻打开编辑器。</p>
-        <span class="card-go">project.html →</span>
-      </a>
-
-      <a class="card card--link card--purple" href="machine.html">
-        <span class="card-index">03 / 无用机器</span>
-        <h3>一台只会<br>关掉自己的开关</h3>
-        <p>按开它，它伸出一根手指，把开关按回去。下面还藏着一个三十秒的点击游戏。</p>
-        <span class="card-go">machine.html →</span>
-      </a>
-    </div>
-  </section>
-
-  <div class="marquee-strip" aria-hidden="true">
-    <div class="ticker-track">
-      <span>&nbsp;★&nbsp; 没有框架 &nbsp;·&nbsp; 没有 npm &nbsp;·&nbsp; 没有构建 &nbsp;·&nbsp; 只有三个文件和你 &nbsp;·&nbsp; NO BUILD STEP &nbsp;·&nbsp; JUST HTML &nbsp;·&nbsp;</span>
-      <span>&nbsp;★&nbsp; 没有框架 &nbsp;·&nbsp; 没有 npm &nbsp;·&nbsp; 没有构建 &nbsp;·&nbsp; 只有三个文件和你 &nbsp;·&nbsp; NO BUILD STEP &nbsp;·&nbsp; JUST HTML &nbsp;·&nbsp;</span>
-    </div>
-  </div>
-
-  <!-- ---------- 交作业清单 ---------- -->
-  <section class="section" id="checklist">
-    <div class="section-head">
-      <h2>这份站点交的作业</h2>
-      <p>八项要求，逐条对照。右边是它落在哪个文件里 —— 你可以直接打开看。</p>
-    </div>
-
-    <div class="checklist">
-      <div class="check-row">
-        <span class="check-no">1</span>
-        <span class="check-text">首页：一张 hero 大图，加一份站点概览</span>
-        <code>index.html</code>
-      </div>
-      <div class="check-row">
-        <span class="check-no">2</span>
-        <span class="check-text">名言页：至少 15 条名言（这里放了 18 条）</span>
-        <code>quotes.html</code>
-      </div>
-      <div class="check-row">
-        <span class="check-no">3</span>
-        <span class="check-text">DRY 导航：只写一次，由 JavaScript 注入每一页</span>
-        <code>nav.html · nav.js</code>
-      </div>
-      <div class="check-row">
-        <span class="check-no">4</span>
-        <span class="check-text">项目页：至少 5 个项目点子（这里放了 7 个）</span>
-        <code>project.html</code>
-      </div>
-      <div class="check-row">
-        <span class="check-no">5</span>
-        <span class="check-text">名言页做过设计，顶部 hero 随机展示一条名言</span>
-        <code>quotes.html · style.css</code>
-      </div>
-      <div class="check-row">
-        <span class="check-no">6</span>
-        <span class="check-text">无用机器页：一个极简的数字玩具</span>
-        <code>machine.html</code>
-      </div>
-      <div class="check-row">
-        <span class="check-no">7</span>
-        <span class="check-text">机器页里还带一个能玩的小游戏</span>
-        <code>machine.html · machine.js</code>
-      </div>
-      <div class="check-row">
-        <span class="check-no">8</span>
-        <span class="check-text">整站统一风格并收尾：链接能点、图片能显、手机上能看</span>
-        <code>every page</code>
-      </div>
-    </div>
-  </section>
-
-  <!-- ---------- 收尾语 ---------- -->
-  <section class="section section--tight">
-    <div class="grid grid--2">
-      <div class="card card--purple">
-        <span class="card-index">为什么这么花</span>
-        <h3>多巴胺不是配色方案，是一种态度</h3>
-        <p>高饱和的橙和粉会让人想起便利店的招牌、七十年代的唱片封套、还有小时候贴在铅笔盒上的贴纸。它们不高级，但它们有精神。这个站点的每一个圆角、每一道粗边、每一条硬阴影，都在说同一句话：网页可以是有趣的。</p>
-      </div>
-      <div class="card">
-        <span class="card-index">怎么读这个站</span>
-        <h3>四页，一条线，没有分支</h3>
-        <p>从名言开始，让一句话把你推去做点什么；去项目页挑一个点子，今晚就写第一行；写累了就去按无用机器的开关，看它自暴自弃。想回头，导航永远在顶部。</p>
-        <a class="btn btn--ghost" href="quotes.html">从第一句开始 →</a>
-      </div>
     </div>
   </section>
 
 </main>
 
-<div id="site-footer"></div>
+<div id="site-foot"></div>
 
 <script src="nav.js"></script>
 </body>

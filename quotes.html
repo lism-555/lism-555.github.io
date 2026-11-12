@@ -3,11 +3,10 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>名言墙 · 多巴胺档案馆</title>
-<meta name="description" content="十八条关于设计、代码与玩心的句子。页面顶部的名言每次刷新都不一样。">
-<meta name="theme-color" content="#6B3BF5">
+<title>引语 · The Slow Press</title>
+<meta name="description" content="十八句关于设计、代码与耐心的话。页首那句每次刷新都不一样。">
+<meta name="theme-color" content="#F5F0E6">
 <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
-<!-- 字体已本地化在 assets/fonts，断网也能正常显示 -->
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -16,257 +15,330 @@
 
 <main>
 
-  <!-- ---------- 随机名言 hero ---------- -->
-  <section class="quote-hero">
-    <div class="quote-hero-inner">
-      <p class="eyebrow"><span class="dot" aria-hidden="true"></span>RANDOM QUOTE / 每次刷新都不一样</p>
+  <!-- ---------- 随机一句 ---------- -->
+  <section class="shell quote-stage">
+    <div class="quote-stage-top">
+      <p class="label">Quotes <span style="color:var(--terracotta)">·</span> 十八句</p>
+      <p class="label">Selected</p>
+    </div>
 
+    <figure class="quote-figure">
       <blockquote id="heroQuote">好设计是尽可能少的设计。</blockquote>
-      <p class="hero-quote-en" id="heroQuoteEn">Good design is as little design as possible.</p>
-      <cite id="heroAuthor">迪特·拉姆斯 · Dieter Rams</cite>
+      <p class="quote-en" id="heroEn">Good design is as little design as possible.</p>
+      <span class="quote-by" id="heroBy">Dieter Rams · 迪特·拉姆斯</span>
+    </figure>
 
-      <div class="quote-hero-actions">
-        <button class="btn btn--big" id="shuffleBtn" type="button">换一条 ↻</button>
-        <span class="counter" id="heroCounter">第 01 / 18 条</span>
-      </div>
+    <div class="quote-stage-actions">
+      <button class="btn-line" id="shuffle" type="button">换一句 <span aria-hidden="true">↻</span></button>
+      <span class="quote-index" id="counter">第 01 / 18 条</span>
     </div>
   </section>
 
-  <!-- ---------- 全部名言 ---------- -->
-  <section class="section">
-    <div class="section-head">
-      <h2>十八条，够撑一阵子</h2>
-      <p>不分先后。上面那条是随机的，下面这十八条全在这儿，想慢慢读就从第一张开始。</p>
+  <!-- ---------- 全部 ---------- -->
+  <section class="shell quote-ledger">
+    <div class="contents-head">
+      <h2>全部十八句</h2>
+      <p class="label">The Ledger</p>
     </div>
 
-    <div class="quote-list">
+    <div class="ledger">
 
-      <article class="quote-card"
+      <article class="ledger-item"
         data-zh="好设计是尽可能少的设计。"
         data-en="Good design is as little design as possible."
-        data-author="迪特·拉姆斯 · Dieter Rams">
-        <blockquote>好设计是尽可能少的设计。</blockquote>
-        <span class="en">Good design is as little design as possible.</span>
-        <span class="author">迪特·拉姆斯 · Dieter Rams</span>
+        data-by="Dieter Rams"
+        data-by-cn="迪特·拉姆斯">
+        <span class="ledger-num">01</span>
+        <div class="ledger-body">
+          <blockquote>好设计是尽可能少的设计。</blockquote>
+          <span class="ledger-en">Good design is as little design as possible.</span>
+        </div>
+        <div class="ledger-by">迪特·拉姆斯<small>Dieter Rams</small></div>
       </article>
 
-      <article class="quote-card"
+      <article class="ledger-item"
         data-zh="少即是多。"
         data-en="Less is more."
-        data-author="密斯·凡·德·罗 · Mies van der Rohe">
-        <blockquote>少即是多。</blockquote>
-        <span class="en">Less is more.</span>
-        <span class="author">密斯·凡·德·罗 · Mies van der Rohe</span>
+        data-by="Mies van der Rohe"
+        data-by-cn="密斯·凡·德·罗">
+        <span class="ledger-num">02</span>
+        <div class="ledger-body">
+          <blockquote>少即是多。</blockquote>
+          <span class="ledger-en">Less is more.</span>
+        </div>
+        <div class="ledger-by">密斯·凡·德·罗<small>Mies van der Rohe</small></div>
       </article>
 
-      <article class="quote-card"
+      <article class="ledger-item"
         data-zh="形式永远追随功能。"
         data-en="Form ever follows function."
-        data-author="路易斯·沙利文 · Louis Sullivan">
-        <blockquote>形式永远追随功能。</blockquote>
-        <span class="en">Form ever follows function.</span>
-        <span class="author">路易斯·沙利文 · Louis Sullivan</span>
+        data-by="Louis Sullivan"
+        data-by-cn="路易斯·沙利文">
+        <span class="ledger-num">03</span>
+        <div class="ledger-body">
+          <blockquote>形式永远追随功能。</blockquote>
+          <span class="ledger-en">Form ever follows function.</span>
+        </div>
+        <div class="ledger-by">路易斯·沙利文<small>Louis Sullivan</small></div>
       </article>
 
-      <article class="quote-card"
+      <article class="ledger-item"
         data-zh="完美不是无可增加，而是无可删减。"
         data-en="Perfection is achieved, not when there is nothing more to add, but when there is nothing left to take away."
-        data-author="圣埃克苏佩里 · Antoine de Saint-Exupéry">
-        <blockquote>完美不是无可增加，而是无可删减。</blockquote>
-        <span class="en">Perfection is achieved, not when there is nothing more to add, but when there is nothing left to take away.</span>
-        <span class="author">圣埃克苏佩里 · Antoine de Saint-Exupéry</span>
+        data-by="Antoine de Saint-Exupéry"
+        data-by-cn="圣埃克苏佩里">
+        <span class="ledger-num">04</span>
+        <div class="ledger-body">
+          <blockquote>完美不是无可增加，而是无可删减。</blockquote>
+          <span class="ledger-en">Perfection is achieved, not when there is nothing more to add, but when there is nothing left to take away.</span>
+        </div>
+        <div class="ledger-by">圣埃克苏佩里<small>Antoine de Saint-Exupéry</small></div>
       </article>
 
-      <article class="quote-card"
+      <article class="ledger-item"
         data-zh="任何足够先进的技术，都与魔法无异。"
         data-en="Any sufficiently advanced technology is indistinguishable from magic."
-        data-author="阿瑟·克拉克 · Arthur C. Clarke">
-        <blockquote>任何足够先进的技术，都与魔法无异。</blockquote>
-        <span class="en">Any sufficiently advanced technology is indistinguishable from magic.</span>
-        <span class="author">阿瑟·克拉克 · Arthur C. Clarke</span>
+        data-by="Arthur C. Clarke"
+        data-by-cn="阿瑟·克拉克">
+        <span class="ledger-num">05</span>
+        <div class="ledger-body">
+          <blockquote>任何足够先进的技术，都与魔法无异。</blockquote>
+          <span class="ledger-en">Any sufficiently advanced technology is indistinguishable from magic.</span>
+        </div>
+        <div class="ledger-by">阿瑟·克拉克<small>Arthur C. Clarke</small></div>
       </article>
 
-      <article class="quote-card"
+      <article class="ledger-item"
         data-zh="先让它跑起来，再让它跑对，最后让它跑快。"
         data-en="Make it work, make it right, make it fast."
-        data-author="肯特·贝克 · Kent Beck">
-        <blockquote>先让它跑起来，再让它跑对，最后让它跑快。</blockquote>
-        <span class="en">Make it work, make it right, make it fast.</span>
-        <span class="author">肯特·贝克 · Kent Beck</span>
+        data-by="Kent Beck"
+        data-by-cn="肯特·贝克">
+        <span class="ledger-num">06</span>
+        <div class="ledger-body">
+          <blockquote>先让它跑起来，再让它跑对，最后让它跑快。</blockquote>
+          <span class="ledger-en">Make it work, make it right, make it fast.</span>
+        </div>
+        <div class="ledger-by">肯特·贝克<small>Kent Beck</small></div>
       </article>
 
-      <article class="quote-card"
+      <article class="ledger-item"
         data-zh="过早的优化是万恶之源。"
         data-en="Premature optimization is the root of all evil."
-        data-author="唐纳德·克努特 · Donald Knuth">
-        <blockquote>过早的优化是万恶之源。</blockquote>
-        <span class="en">Premature optimization is the root of all evil.</span>
-        <span class="author">唐纳德·克努特 · Donald Knuth</span>
+        data-by="Donald Knuth"
+        data-by-cn="唐纳德·克努特">
+        <span class="ledger-num">07</span>
+        <div class="ledger-body">
+          <blockquote>过早的优化是万恶之源。</blockquote>
+          <span class="ledger-en">Premature optimization is the root of all evil.</span>
+        </div>
+        <div class="ledger-by">唐纳德·克努特<small>Donald Knuth</small></div>
       </article>
 
-      <article class="quote-card"
+      <article class="ledger-item"
         data-zh="完美是好的敌人。"
         data-en="The best is the enemy of the good."
-        data-author="伏尔泰 · Voltaire">
-        <blockquote>完美是好的敌人。</blockquote>
-        <span class="en">The best is the enemy of the good.</span>
-        <span class="author">伏尔泰 · Voltaire</span>
+        data-by="Voltaire"
+        data-by-cn="伏尔泰">
+        <span class="ledger-num">08</span>
+        <div class="ledger-body">
+          <blockquote>完美是好的敌人。</blockquote>
+          <span class="ledger-en">The best is the enemy of the good.</span>
+        </div>
+        <div class="ledger-by">伏尔泰<small>Voltaire</small></div>
       </article>
 
-      <article class="quote-card"
+      <article class="ledger-item"
         data-zh="艺术是洗去灵魂上日常灰尘的水。"
         data-en="Art washes away from the soul the dust of everyday life."
-        data-author="毕加索 · Pablo Picasso">
-        <blockquote>艺术是洗去灵魂上日常灰尘的水。</blockquote>
-        <span class="en">Art washes away from the soul the dust of everyday life.</span>
-        <span class="author">毕加索 · Pablo Picasso</span>
+        data-by="Pablo Picasso"
+        data-by-cn="毕加索">
+        <span class="ledger-num">09</span>
+        <div class="ledger-body">
+          <blockquote>艺术是洗去灵魂上日常灰尘的水。</blockquote>
+          <span class="ledger-en">Art washes away from the soul the dust of everyday life.</span>
+        </div>
+        <div class="ledger-by">毕加索<small>Pablo Picasso</small></div>
       </article>
 
-      <article class="quote-card"
+      <article class="ledger-item"
         data-zh="色彩是琴键，眼睛是琴槌，灵魂是绷满琴弦的钢琴。"
         data-en="Color is the keyboard, the eyes are the hammers, the soul is the piano with many strings."
-        data-author="康定斯基 · Wassily Kandinsky">
-        <blockquote>色彩是琴键，眼睛是琴槌，灵魂是绷满琴弦的钢琴。</blockquote>
-        <span class="en">Color is the keyboard, the eyes are the hammers, the soul is the piano with many strings.</span>
-        <span class="author">康定斯基 · Wassily Kandinsky</span>
+        data-by="Wassily Kandinsky"
+        data-by-cn="康定斯基">
+        <span class="ledger-num">10</span>
+        <div class="ledger-body">
+          <blockquote>色彩是琴键，眼睛是琴槌，灵魂是绷满琴弦的钢琴。</blockquote>
+          <span class="ledger-en">Color is the keyboard, the eyes are the hammers, the soul is the piano with many strings.</span>
+        </div>
+        <div class="ledger-by">康定斯基<small>Wassily Kandinsky</small></div>
       </article>
 
-      <article class="quote-card"
+      <article class="ledger-item"
         data-zh="设计不只是外观和感觉，设计是它如何运作。"
         data-en="Design is not just what it looks like and feels like. Design is how it works."
-        data-author="史蒂夫·乔布斯 · Steve Jobs">
-        <blockquote>设计不只是外观和感觉，设计是它如何运作。</blockquote>
-        <span class="en">Design is not just what it looks like and feels like. Design is how it works.</span>
-        <span class="author">史蒂夫·乔布斯 · Steve Jobs</span>
+        data-by="Steve Jobs"
+        data-by-cn="史蒂夫·乔布斯">
+        <span class="ledger-num">11</span>
+        <div class="ledger-body">
+          <blockquote>设计不只是外观和感觉，设计是它如何运作。</blockquote>
+          <span class="ledger-en">Design is not just what it looks like and feels like. Design is how it works.</span>
+        </div>
+        <div class="ledger-by">史蒂夫·乔布斯<small>Steve Jobs</small></div>
       </article>
 
-      <article class="quote-card"
+      <article class="ledger-item"
         data-zh="玩耍常被当成严肃学习之间的休息，但对孩子来说，玩耍就是严肃的学习。"
         data-en="Play is often talked about as if it were a relief from serious learning. But for children play is serious learning."
-        data-author="弗雷德·罗杰斯 · Fred Rogers">
-        <blockquote>玩耍常被当成严肃学习之间的休息，但对孩子来说，玩耍就是严肃的学习。</blockquote>
-        <span class="en">Play is often talked about as if it were a relief from serious learning. But for children play is serious learning.</span>
-        <span class="author">弗雷德·罗杰斯 · Fred Rogers</span>
+        data-by="Fred Rogers"
+        data-by-cn="弗雷德·罗杰斯">
+        <span class="ledger-num">12</span>
+        <div class="ledger-body">
+          <blockquote>玩耍常被当成严肃学习之间的休息，但对孩子来说，玩耍就是严肃的学习。</blockquote>
+          <span class="ledger-en">Play is often talked about as if it were a relief from serious learning. But for children play is serious learning.</span>
+        </div>
+        <div class="ledger-by">弗雷德·罗杰斯<small>Fred Rogers</small></div>
       </article>
 
-      <article class="quote-card"
+      <article class="ledger-item"
         data-zh="保持饥饿，保持愚蠢。"
         data-en="Stay hungry. Stay foolish."
-        data-author="斯图尔特·布兰德 · 《全球概览》停刊号">
-        <blockquote>保持饥饿，保持愚蠢。</blockquote>
-        <span class="en">Stay hungry. Stay foolish.</span>
-        <span class="author">斯图尔特·布兰德 · 《全球概览》停刊号</span>
+        data-by="Stewart Brand"
+        data-by-cn="斯图尔特·布兰德">
+        <span class="ledger-num">13</span>
+        <div class="ledger-body">
+          <blockquote>保持饥饿，保持愚蠢。</blockquote>
+          <span class="ledger-en">Stay hungry. Stay foolish.</span>
+        </div>
+        <div class="ledger-by">斯图尔特·布兰德<small>《全球概览》停刊号</small></div>
       </article>
 
-      <article class="quote-card"
+      <article class="ledger-item"
         data-zh="未来早已到来，只是尚未均匀分布。"
         data-en="The future is already here — it's just not evenly distributed."
-        data-author="威廉·吉布森 · William Gibson">
-        <blockquote>未来早已到来，只是尚未均匀分布。</blockquote>
-        <span class="en">The future is already here — it's just not evenly distributed.</span>
-        <span class="author">威廉·吉布森 · William Gibson</span>
+        data-by="William Gibson"
+        data-by-cn="威廉·吉布森">
+        <span class="ledger-num">14</span>
+        <div class="ledger-body">
+          <blockquote>未来早已到来，只是尚未均匀分布。</blockquote>
+          <span class="ledger-en">The future is already here — it's just not evenly distributed.</span>
+        </div>
+        <div class="ledger-by">威廉·吉布森<small>William Gibson</small></div>
       </article>
 
-      <article class="quote-card"
+      <article class="ledger-item"
         data-zh="认真对待你的快乐。"
         data-en="Take your pleasure seriously."
-        data-author="查尔斯·伊姆斯 · Charles Eames">
-        <blockquote>认真对待你的快乐。</blockquote>
-        <span class="en">Take your pleasure seriously.</span>
-        <span class="author">查尔斯·伊姆斯 · Charles Eames</span>
+        data-by="Charles Eames"
+        data-by-cn="查尔斯·伊姆斯">
+        <span class="ledger-num">15</span>
+        <div class="ledger-body">
+          <blockquote>认真对待你的快乐。</blockquote>
+          <span class="ledger-en">Take your pleasure seriously.</span>
+        </div>
+        <div class="ledger-by">查尔斯·伊姆斯<small>Charles Eames</small></div>
       </article>
 
-      <article class="quote-card"
+      <article class="ledger-item"
         data-zh="设计是把形式与内容放在一起的方法。"
         data-en="Design is the method of putting form and content together."
-        data-author="保罗·兰德 · Paul Rand">
-        <blockquote>设计是把形式与内容放在一起的方法。</blockquote>
-        <span class="en">Design is the method of putting form and content together.</span>
-        <span class="author">保罗·兰德 · Paul Rand</span>
+        data-by="Paul Rand"
+        data-by-cn="保罗·兰德">
+        <span class="ledger-num">16</span>
+        <div class="ledger-body">
+          <blockquote>设计是把形式与内容放在一起的方法。</blockquote>
+          <span class="ledger-en">Design is the method of putting form and content together.</span>
+        </div>
+        <div class="ledger-by">保罗·兰德<small>Paul Rand</small></div>
       </article>
 
-      <article class="quote-card"
+      <article class="ledger-item"
         data-zh="工欲善其事，必先利其器。"
         data-en="The mechanic who wishes to do his work well must first sharpen his tools."
-        data-author="《论语·卫灵公》">
-        <blockquote>工欲善其事，必先利其器。</blockquote>
-        <span class="en">The mechanic who wishes to do his work well must first sharpen his tools.</span>
-        <span class="author">《论语·卫灵公》</span>
+        data-by="《论语·卫灵公》"
+        data-by-cn="孔子">
+        <span class="ledger-num">17</span>
+        <div class="ledger-body">
+          <blockquote>工欲善其事，必先利其器。</blockquote>
+          <span class="ledger-en">The mechanic who wishes to do his work well must first sharpen his tools.</span>
+        </div>
+        <div class="ledger-by">《论语·卫灵公》<small>Confucius</small></div>
       </article>
 
-      <article class="quote-card"
+      <article class="ledger-item"
         data-zh="大巧若拙。"
         data-en="Great skill appears clumsy."
-        data-author="老子 · 《道德经》">
-        <blockquote>大巧若拙。</blockquote>
-        <span class="en">Great skill appears clumsy.</span>
-        <span class="author">老子 · 《道德经》</span>
+        data-by="Laozi"
+        data-by-cn="老子">
+        <span class="ledger-num">18</span>
+        <div class="ledger-body">
+          <blockquote>大巧若拙。</blockquote>
+          <span class="ledger-en">Great skill appears clumsy.</span>
+        </div>
+        <div class="ledger-by">老子<small>《道德经》</small></div>
       </article>
 
     </div>
   </section>
 
-  <section class="section section--tight">
-    <div class="card card--pink" style="text-align:center;">
-      <span class="card-index">读完了</span>
-      <h3>一句话不解决问题，但能让你打开编辑器</h3>
-      <p style="max-width:52ch;margin-inline:auto;">下一站是七个今晚就能开工的小项目 —— 每个都不需要新工具，只要一个浏览器。</p>
-      <a class="btn btn--primary" href="project.html">去看七个点子 →</a>
+  <section class="shell afterword">
+    <div>
+      <p class="label">Next</p>
+      <h2 style="font-size:clamp(22px,2.4vw,28px);margin:16px 0 14px;">句子读完了，手还空着</h2>
+      <p style="font-size:15px;line-height:1.95;color:var(--muted);max-width:40ch;">下一页是七件小事，每一件都不需要新工具，只要一个浏览器。</p>
+    </div>
+    <div style="align-self:end;">
+      <a class="textlink" href="project.html">看七件提案 <span class="arrow" aria-hidden="true">→</span></a>
     </div>
   </section>
 
 </main>
 
-<div id="site-footer"></div>
+<div id="site-foot"></div>
 
 <script src="nav.js"></script>
 <script>
-/* 顶部随机名言：直接读页面上的卡片，保证只有一份数据源。
-   没有 JS 时，hero 会保留 HTML 里写好的第一条，页面依然完整。 */
+/* 页首随机引语：数据只来自页面上的列表，
+   没有 JS 时页首保留 HTML 里写好的第一条，页面依然完整。 */
 (function () {
   'use strict';
 
-  var cards = Array.prototype.slice.call(document.querySelectorAll('.quote-card'));
-  var heroQuote = document.getElementById('heroQuote');
-  var heroEn = document.getElementById('heroQuoteEn');
-  var heroAuthor = document.getElementById('heroAuthor');
-  var counter = document.getElementById('heroCounter');
-  var button = document.getElementById('shuffleBtn');
+  var items = Array.prototype.slice.call(document.querySelectorAll('.ledger-item'));
+  var quoteEl = document.getElementById('heroQuote');
+  var enEl = document.getElementById('heroEn');
+  var byEl = document.getElementById('heroBy');
+  var counter = document.getElementById('counter');
+  var btn = document.getElementById('shuffle');
 
-  if (!cards.length || !heroQuote || !button) return;
+  if (!items.length || !quoteEl || !btn) return;
 
   var current = -1;
 
-  function pad(n) { return n < 10 ? '0' + n : String(n); }
+  function pad(n) { return n < 10 ? '0' + n : '' + n; }
 
-  function render(index) {
-    var card = cards[index];
-    heroQuote.textContent = card.dataset.zh;
-    heroEn.textContent = card.dataset.en;
-    heroAuthor.textContent = card.dataset.author;
-    counter.textContent = '第 ' + pad(index + 1) + ' / ' + cards.length + ' 条';
-
-    heroQuote.style.opacity = '0';
-    heroQuote.style.transform = 'translateY(10px)';
-    window.requestAnimationFrame(function () {
-      heroQuote.style.transition = 'opacity .32s ease, transform .32s ease';
-      heroQuote.style.opacity = '1';
-      heroQuote.style.transform = 'translateY(0)';
-    });
+  function show(i) {
+    var el = items[i];
+    quoteEl.style.opacity = '0';
+    window.setTimeout(function () {
+      quoteEl.textContent = el.dataset.zh;
+      enEl.textContent = el.dataset.en;
+      byEl.textContent = el.dataset.by + ' · ' + el.dataset.byCn;
+      counter.textContent = '第 ' + pad(i + 1) + ' / ' + items.length + ' 条';
+      quoteEl.style.opacity = '1';
+    }, 160);
   }
 
-  function shuffle() {
-    var next = current;
-    while (cards.length > 1 && next === current) {
-      next = Math.floor(Math.random() * cards.length);
+  function next() {
+    var n = current;
+    while (items.length > 1 && n === current) {
+      n = Math.floor(Math.random() * items.length);
     }
-    if (cards.length === 1) next = 0;
-    current = next;
-    render(current);
+    if (items.length === 1) n = 0;
+    current = n;
+    show(current);
   }
 
-  button.addEventListener('click', shuffle);
-  shuffle();
+  btn.addEventListener('click', next);
+  next();
 })();
 </script>
 </body>

@@ -1,28 +1,30 @@
 <!-- ============================================================
      全站唯一的导航源文件。
-     这个文件会被 nav.js 用 fetch() 取走，注入每个页面的
-     #site-nav 容器里 —— 想改导航，只改这里一处。
+     nav.js 会 fetch 这个文件，注入每一页的 #site-nav。
+     改导航只需要改这一处。
      ============================================================ -->
-<nav class="site-nav" aria-label="主导航">
-  <a class="brand" href="index.html">
-    <span class="brand-dot" aria-hidden="true"></span>
-    <span>
-      多巴胺档案馆
-      <small>RETRO DOPAMINE CLUB</small>
-    </span>
-  </a>
+<header class="site-head">
+  <div class="shell site-head-inner">
+    <a class="wordmark" href="index.html">
+      <span class="wordmark-mark">The Slow Press</span>
+      <span class="wordmark-sub">慢印 · 第 01 期</span>
+    </a>
 
-  <ul class="nav-links">
-    <li><a href="index.html" data-nav="index.html">首页</a></li>
-    <li><a href="quotes.html" data-nav="quotes.html">名言墙</a></li>
-    <li><a href="project.html" data-nav="project.html">项目</a></li>
-    <li><a href="machine.html" data-nav="machine.html">无用机器</a></li>
-  </ul>
-</nav>
+    <nav aria-label="主导航">
+      <ul class="nav-list">
+        <li><a href="index.html" data-nav="index.html">目录</a></li>
+        <li><a href="quotes.html" data-nav="quotes.html">引语</a></li>
+        <li><a href="project.html" data-nav="project.html">提案</a></li>
+        <li><a href="machine.html" data-nav="machine.html">装置</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
 
-<div class="ticker" aria-hidden="true">
-  <div class="ticker-track">
-    <span>&nbsp;★&nbsp; 保持高饱和 &nbsp;·&nbsp; STAY LOUD &nbsp;·&nbsp; 复古多巴胺 &nbsp;·&nbsp; 手写 HTML &nbsp;·&nbsp; 没有框架也没有构建 &nbsp;·&nbsp; 双击就能打开 &nbsp;·&nbsp; 恭喜你发现这行小字 &nbsp;·&nbsp;</span>
-    <span>&nbsp;★&nbsp; 保持高饱和 &nbsp;·&nbsp; STAY LOUD &nbsp;·&nbsp; 复古多巴胺 &nbsp;·&nbsp; 手写 HTML &nbsp;·&nbsp; 没有框架也没有构建 &nbsp;·&nbsp; 双击就能打开 &nbsp;·&nbsp; 恭喜你发现这行小字 &nbsp;·&nbsp;</span>
+<div class="masthead">
+  <div class="shell masthead-inner">
+    <span>Issue 01 <span class="dot">/</span> Winter</span>
+    <span>Paper, Pixels <span class="dot">&amp;</span> Handwork</span>
+    <span>18 Quotes <span class="dot">·</span> 7 Proposals <span class="dot">·</span> 1 Machine</span>
   </div>
 </div>

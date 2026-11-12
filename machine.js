@@ -1,20 +1,19 @@
 /* ============================================================
-   machine.js —— 无用机器 + 多巴胺快抓
+   machine.js —— 装置 + 三十秒计时器
    ------------------------------------------------------------
-   上半部分：一台只会把自己关掉的开关。
-   下半部分：三十秒点击小游戏。
-   两者互不依赖，任何一块元素缺失都不会拖垮另一块。
+   上半：只会关掉自己的开关。
+   下半：点标本的小游戏。
+   两块互相独立，任何一块元素缺失都不影响另一块。
    ============================================================ */
 
 (function () {
   'use strict';
 
-  /* ---------- 本地存储（无痕模式或 file:// 下也不会报错） ---------- */
   function read(key, fallback) {
     try {
-      var value = window.localStorage.getItem(key);
-      return value === null ? fallback : value;
-    } catch (err) {
+      var v = window.localStorage.getItem(key);
+      return v === null ? fallback : v;
+    } catch (e) {
       return fallback;
     }
   }
@@ -22,178 +21,160 @@
   function write(key, value) {
     try {
       window.localStorage.setItem(key, String(value));
-    } catch (err) {
-      /* 存不了就算了，功能照常 */
-    }
+    } catch (e) { /* 存不了就算了 */ }
   }
 
   /* ==========================================================
-     一、无用机器
+     一、装置
      ========================================================== */
-  (function uselessMachine() {
-    var powerSwitch = document.getElementById('powerSwitch');
-    var finger = document.getElementById('finger');
-    var led = document.getElementById('led');
-    var ledText = document.getElementById('ledText');
-    var switchText = document.getElementById('switchText');
-    var status = document.getElementById('machineStatus');
+  (function device() {
+    var sw = document.getElementById('powerSwitch');
+    var arm = document.getElementById('arm');
+    var lamp = document.getElementById('lamp');
+    var lampText = document.getElementById('lampText');
+    var caption = document.getElementById('switchCaption');
+    var status = document.getElementById('statusText');
     var offCountEl = document.getElementById('offCount');
 
-    if (!powerSwitch || !finger || !status) return;
+    if (!sw || !arm || !status) return;
 
     var busy = false;
-    var offCount = parseInt(read('dopamine.offCount', '0'), 10);
-    if (isNaN(offCount)) offCount = 0;
-    if (offCountEl) offCountEl.textContent = offCount;
+    var count = parseInt(read('slowpress.offCount', '0'), 10);
+    if (isNaN(count)) count = 0;
+    if (offCountEl) offCountEl.textContent = count;
 
     function setOn(on) {
-      powerSwitch.classList.toggle('is-on', on);
-      powerSwitch.setAttribute('aria-checked', on ? 'true' : 'false');
-      if (led) led.classList.toggle('is-on', on);
-      if (ledText) ledText.textContent = on ? '电源 ON' : '电源 OFF';
-      if (switchText) switchText.textContent = on ? 'ON' : 'OFF';
+      sw.classList.toggle('is-on', on);
+      sw.setAttribute('aria-checked', on ? 'true' : 'false');
+      if (lamp) lamp.classList.toggle('is-on', on);
+      if (lampText) lampText.textContent = on ? 'Live' : 'Standby';
+      if (caption) caption.textContent = on ? 'On' : 'Off';
     }
 
     function say(text) {
       status.textContent = text;
     }
 
-    function startCycle() {
+    function run() {
       busy = true;
       setOn(true);
-      say('咔哒。灯亮了，它开始思考。');
+      say('咔哒。它通电了，正在想。');
 
-      /* 伸出手指 */
       window.setTimeout(function () {
-        finger.classList.add('is-out');
-        say('……它从洞里伸出了一根手指。');
-      }, 760);
+        arm.classList.add('is-out');
+        say('它从孔里伸出了一根手指。');
+      }, 780);
 
-      /* 把开关按回去 */
       window.setTimeout(function () {
-        finger.classList.remove('is-out');
-        finger.classList.add('is-tap');
+        arm.classList.remove('is-out');
+        arm.classList.add('is-press');
         setOn(false);
+        count += 1;
+        if (offCountEl) offCountEl.textContent = count;
+        write('slowpress.offCount', count);
+        say('啪。开关被拨回去了。');
+      }, 1560);
 
-        offCount += 1;
-        if (offCountEl) offCountEl.textContent = offCount;
-        write('dopamine.offCount', offCount);
-
-        say('啪。开关被按回去了。');
-      }, 1520);
-
-      /* 收手，交代遗言 */
       window.setTimeout(function () {
-        finger.classList.remove('is-tap');
-        say('它只会做这一件事，而且做得很好。');
-      }, 2260);
+        arm.classList.remove('is-press');
+        say('它只会做这一件事，而且做得很稳。');
+      }, 2320);
 
       window.setTimeout(function () {
         busy = false;
-      }, 3050);
+      }, 3150);
     }
 
-    powerSwitch.addEventListener('click', function () {
+    sw.addEventListener('click', function () {
       if (busy) return;
-
-      if (powerSwitch.classList.contains('is-on')) {
-        /* 罕见的兜底：状态不同步时，手动关掉 */
+      if (sw.classList.contains('is-on')) {
         setOn(false);
-        say('你自己把它关掉了。机器有点失落。');
+        say('你自己把它关了。它有点失落。');
         return;
       }
-
-      startCycle();
+      run();
     });
   })();
 
   /* ==========================================================
-     二、多巴胺快抓
+     二、三十秒计时器
      ========================================================== */
-  (function dopaCatch() {
-    var field = document.getElementById('gameField');
-    var target = document.getElementById('target');
-    var overlay = document.getElementById('gameOverlay');
-    var overlayTitle = document.getElementById('overlayTitle');
-    var overlayText = document.getElementById('overlayText');
-    var startBtn = document.getElementById('startGame');
+  (function specimenRun() {
+    var arena = document.getElementById('arena');
+    var specimen = document.getElementById('specimen');
+    var veil = document.getElementById('veil');
+    var veilTitle = document.getElementById('veilTitle');
+    var veilText = document.getElementById('veilText');
+    var startBtn = document.getElementById('startBtn');
     var scoreEl = document.getElementById('score');
     var timeEl = document.getElementById('time');
     var bestEl = document.getElementById('best');
 
-    if (!field || !target || !overlay || !startBtn) return;
+    if (!arena || !specimen || !veil || !startBtn) return;
 
     var DURATION = 30;
-    var COLORS = ['#FFD23F', '#FF9AC1', '#7FE9D8', '#C0A8FF', '#FFB27F'];
-    var GLYPHS = ['★', '✿', '♥', '☀', '✦'];
-
     var running = false;
     var score = 0;
     var endAt = 0;
     var tickId = null;
     var hopId = null;
 
-    var best = parseInt(read('dopamine.best', '0'), 10);
+    var best = parseInt(read('slowpress.best', '0'), 10);
     if (isNaN(best)) best = 0;
     if (bestEl) bestEl.textContent = best;
 
-    function randomFrom(list) {
-      return list[Math.floor(Math.random() * list.length)];
-    }
+    function pad(n) { return n < 10 ? '0' + n : '' + n; }
 
-    /* 把目标扔到场地里的随机位置 */
-    function moveTarget() {
-      var pad = 12;
-      var w = field.clientWidth - target.offsetWidth - pad * 2;
-      var h = field.clientHeight - target.offsetHeight - pad * 2;
-
+    function place() {
+      var pad_ = 14;
+      var w = arena.clientWidth - specimen.offsetWidth - pad_ * 2;
+      var h = arena.clientHeight - specimen.offsetHeight - pad_ * 2;
       if (w < 0) w = 0;
       if (h < 0) h = 0;
 
-      target.style.left = (pad + Math.random() * w) + 'px';
-      target.style.top = (pad + Math.random() * h) + 'px';
-      target.style.background = randomFrom(COLORS);
-      target.textContent = randomFrom(GLYPHS);
+      specimen.style.left = (pad_ + Math.random() * w) + 'px';
+      specimen.style.top = (pad_ + Math.random() * h) + 'px';
+      specimen.textContent = pad(Math.floor(Math.random() * 12) + 1);
+
+      if (Math.random() > 0.55) {
+        specimen.setAttribute('data-tone', 'clay');
+      } else {
+        specimen.removeAttribute('data-tone');
+      }
     }
 
-    /* 点中时冒出来的 +1 */
-    function floatScore() {
-      var mark = document.createElement('span');
-      mark.className = 'float-score';
-      mark.textContent = '+1';
-      mark.style.left = target.offsetLeft + 20 + 'px';
-      mark.style.top = target.offsetTop + 'px';
-      field.appendChild(mark);
+    function mark() {
+      var t = document.createElement('span');
+      t.className = 'tick';
+      t.textContent = '+1';
+      t.style.left = (specimen.offsetLeft + 24) + 'px';
+      t.style.top = specimen.offsetTop + 'px';
+      arena.appendChild(t);
       window.setTimeout(function () {
-        if (mark.parentNode) mark.parentNode.removeChild(mark);
-      }, 720);
+        if (t.parentNode) t.parentNode.removeChild(t);
+      }, 820);
     }
 
     function tick() {
       var left = (endAt - Date.now()) / 1000;
       if (left < 0) left = 0;
-
       if (timeEl) timeEl.textContent = Math.ceil(left) + 's';
-
-      if (left <= 0) endGame();
+      if (left <= 0) stop();
     }
 
-    function startGame() {
+    function start() {
       running = true;
       score = 0;
       if (scoreEl) scoreEl.textContent = '0';
       if (timeEl) timeEl.textContent = DURATION + 's';
 
-      overlay.classList.add('is-hidden');
-      target.hidden = false;
-      target.style.left = '0px';
-      target.style.top = '0px';
+      veil.classList.add('is-hidden');
+      specimen.hidden = false;
 
-      if (target.offsetWidth === 0) {
-        /* 首帧尺寸还没算出来时，等一格再放 */
-        window.requestAnimationFrame(moveTarget);
+      if (specimen.offsetWidth === 0) {
+        window.requestAnimationFrame(place);
       } else {
-        moveTarget();
+        place();
       }
 
       endAt = Date.now() + DURATION * 1000;
@@ -201,71 +182,66 @@
       window.clearInterval(hopId);
       tickId = window.setInterval(tick, 100);
       hopId = window.setInterval(function () {
-        if (running) moveTarget();
-      }, 1100);
+        if (running) place();
+      }, 1150);
     }
 
-    function endGame() {
+    function stop() {
       running = false;
       window.clearInterval(tickId);
       window.clearInterval(hopId);
-
-      target.hidden = true;
+      specimen.hidden = true;
 
       var isBest = score > best;
       if (isBest) {
         best = score;
-        write('dopamine.best', best);
+        write('slowpress.best', best);
         if (bestEl) bestEl.textContent = best;
       }
 
-      if (overlayTitle) {
-        overlayTitle.textContent = isBest ? '新纪录：' + score + ' 分' : '时间到，' + score + ' 分';
+      if (veilTitle) {
+        veilTitle.textContent = isBest ? '新纪录 · ' + score + ' 分' : '时间到 · ' + score + ' 分';
       }
 
-      if (overlayText) {
+      if (veilText) {
         if (score === 0) {
-          overlayText.textContent = '一个都没抓到。没关系，形状出现的位置是随机的，人生也是。';
+          veilText.textContent = '一个也没抓到。标本的位置是随机的，人生也是。';
         } else if (score < 10) {
-          overlayText.textContent = '抓到了 ' + score + ' 个。再来一次，你大概已经摸清它的节奏了。';
+          veilText.textContent = '抓到 ' + score + ' 个。再来一次，你大概已经摸清它的节奏了。';
         } else if (score < 20) {
-          overlayText.textContent = '抓到了 ' + score + ' 个，手速不错。最高分是 ' + best + '。';
+          veilText.textContent = '抓到 ' + score + ' 个，手速不错。最高分 ' + best + '。';
         } else {
-          overlayText.textContent = '抓到了 ' + score + ' 个 —— 你的眼睛已经比鼠标快了。最高分 ' + best + '。';
+          veilText.textContent = '抓到 ' + score + ' 个 —— 眼睛已经比手快了。最高分 ' + best + '。';
         }
       }
 
-      startBtn.textContent = '再来一次';
-      overlay.classList.remove('is-hidden');
+      startBtn.innerHTML = '再来一次 <span aria-hidden="true">→</span>';
+      veil.classList.remove('is-hidden');
     }
 
-    target.addEventListener('click', function () {
+    specimen.addEventListener('click', function () {
       if (!running) return;
       score += 1;
       if (scoreEl) scoreEl.textContent = score;
-      floatScore();
-      moveTarget();
+      mark();
+      place();
     });
 
     startBtn.addEventListener('click', function () {
       if (running) return;
-      startGame();
+      start();
     });
 
-    /* 空格开始，但焦点在按钮/链接上时交给它们自己处理 */
-    document.addEventListener('keydown', function (event) {
-      if (event.code !== 'Space' && event.key !== ' ') return;
-
-      var tag = (event.target && event.target.tagName || '').toLowerCase();
+    document.addEventListener('keydown', function (e) {
+      if (e.code !== 'Space' && e.key !== ' ') return;
+      var tag = (e.target && e.target.tagName || '').toLowerCase();
       if (tag === 'button' || tag === 'a' || tag === 'input' || tag === 'textarea') return;
-
-      event.preventDefault();
-      if (!running) startGame();
+      e.preventDefault();
+      if (!running) start();
     });
 
-    /* 窗口变化后别把目标留在场外 */
     window.addEventListener('resize', function () {
-      if (running) moveTarget();
+      if (running) place();
     });
   })();
 })();
